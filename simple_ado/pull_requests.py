@@ -6,7 +6,7 @@
 """ADO Pull Request API wrapper."""
 
 import logging
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Union
 
 import deserialize
 import requests
@@ -296,7 +296,7 @@ class ADOPullRequestClient(ADOBaseClient):
             + f"/pullRequests/{self.pull_request_id}/statuses?api-version=4.0-preview"
         )
 
-        body = {
+        body: Dict[str, Union[int, str, Dict[str, str]]] = {
             "state": state.value,
             "description": description,
             "context": {"name": context, "genre": identifier},

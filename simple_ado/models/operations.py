@@ -37,7 +37,7 @@ class PatchOperation:
         self.value = value
         self.from_path = from_path
 
-    def serialize(self) -> Dict[str, str]:
+    def serialize(self) -> Dict[str, Optional[str]]:
         """Serialize for sending to ADO.
 
         :returns: A dictionary.

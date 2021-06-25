@@ -380,7 +380,7 @@ class ADOHTTPClient:
 
         headers = {"Accept": "application/json"}
 
-        for header_name, header_value in self.extra_headers:
+        for header_name, header_value in self.extra_headers.items():
             headers[header_name] = header_value
 
         if additional_headers is None:
